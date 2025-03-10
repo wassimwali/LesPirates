@@ -5,13 +5,12 @@ import cartes.Carte;
 public class Pirate {
 	private String nom;
 	private int nbrCoeur;
-	private Carte[] main;
+	private LaMain main;
 	private int taille=0;
-	private int popularite;
+	private int popularite=0;
 	public Pirate(String nom) {
 		this.nom=nom;
 		this.nbrCoeur=5;
-		this.main=new Carte[5];
 		this.popularite=0;
 	}
 	public String getNom() {
@@ -20,15 +19,23 @@ public class Pirate {
 	public int getnbrCoeur() {
 		return nbrCoeur;
 	}
-	public Carte inventerCarte(String nom, int force , String type) {
-		Carte carte=new Carte(nom,force,type);
-		return carte;
+	public void setMain(LaMain main) {
+		this.main=main;
 	}
-	public void piochceCarte(Carte carte) {
-		taille++;
-		main[taille]=carte;
+	public LaMain getMain() {
+		return main
 	}
-	public void attaquer(Carte carte,Pirate adversaire) {
+	public void setnbrCoeur(int val) {
+		this.nbrCoeur-=val;
+	}
+	public int getPopularite() {
+		return popularite;
+	}
+	public void setPopularite(int val) {
+		this.popularite+=val;
+	}
+	
+	/*public void attaquer(Carte carte,Pirate adversaire) {
 		if (carte.getType()=="attaque") {
 			adversaire.nbrCoeur-=carte.getPuissance();
 		}
@@ -41,4 +48,5 @@ public class Pirate {
 			this.popularite+=carte.getPuissance();
 		}
 	}
+*/
 }
