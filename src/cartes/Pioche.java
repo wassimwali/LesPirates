@@ -9,6 +9,7 @@ public class Pioche {
     private int nbCartes = TAILLEPIOCHE;
     public Pioche() {
         initialiserPioche();
+        melangerPioche();
     }
 
     private void initialiserPioche() {

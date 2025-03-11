@@ -1,6 +1,7 @@
 package pirate;
 
 import cartes.Carte;
+import cartes.Pioche;
 import vue.IAffichage;
 
 public class LaMain {
@@ -8,9 +9,7 @@ public class LaMain {
 	private Carte[] cartes=new Carte[nbrMAX];
 	private static final IAffichage affichage = Jeu.getAffichage();
 	
-	public LaMain(Carte[] cartes) {
-		this.cartes=cartes;
-	}
+	public LaMain() {}
 	public void afficher() {
 		for (int i = 0; i < nbrMAX && cartes[i] != null; i++) {
 			affichage.afficherCarte(cartes[i].getNom(), cartes[i].getDescription());
@@ -32,6 +31,13 @@ public class LaMain {
 	    cartes[nbrMAX - 1] = null;
 	    return carteRetiree;
 	}
+	public void initialiserMain(Pioche pioche) {
+        for (int i = 0; i < 4; i++) {
+            if (!pioche.estVide()) {
+                ajouterCarte(pioche.retirerCarte());
+            }
+        }
+    }
 
 	
 }

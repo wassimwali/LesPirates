@@ -20,11 +20,11 @@ public class Jeu {
 		String Nom1=affichage.demanderNom(1);
 		String Nom2=affichage.demanderNom(2);
 		Pirate Joueur1=new Pirate(Nom1);
-		Pirate Joueur2=new Pirate(Nom2);	
+		Pirate Joueur2=new Pirate(Nom2);
+		Pioche pioche = new Pioche();
+		Joueur1.getMain().initialiserMain(pioche);
+		Joueur2.getMain().initialiserMain(pioche);
+
+		
 	}
-	/*public Carte inventerCarte(String nom, int force , String description) {
-		Carte carte=new Carte(nom,force,description);
-		return carte;
-	}
-*/
 }
