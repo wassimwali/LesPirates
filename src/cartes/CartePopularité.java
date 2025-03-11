@@ -11,7 +11,7 @@ public class CartePopularité extends Carte {
 	public void appliquerCarte(Pirate joueur) {
 		joueur.setPopularite(getPuissance());
 	}
-	protected ZoneJeu donnerZone() {
+	public ZoneJeu donnerZone() {
 		return ZoneJeu.POPULARITE;
 	}
 	

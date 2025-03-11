@@ -27,7 +27,7 @@ public abstract class Carte {
 	public void afficher(int numCarte) {
 		affichage.afficherCarte(nom,description,puissance);
 	}
-	protected abstract void appliquerCarte(Pirate joueur);
-	protected abstract ZoneJeu donnerZone();
+	public abstract void appliquerCarte(Pirate joueur);
+	public abstract ZoneJeu donnerZone();
 }
 

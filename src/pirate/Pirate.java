@@ -1,12 +1,12 @@
 package pirate;
 
-import cartes.Carte;
+import cartes.CarteAttaque;
+import cartes.CartePopularité;
 
 public class Pirate {
 	private String nom;
 	private int nbrCoeur;
 	private LaMain main;
-	private int taille=0;
 	private int popularite=0;
 	public Pirate(String nom) {
 		this.nom=nom;
@@ -16,14 +16,14 @@ public class Pirate {
 	public String getNom() {
 		return nom;
 	}
-	public int getnbrCoeur() {
-		return nbrCoeur;
-	}
 	public void setMain(LaMain main) {
 		this.main=main;
 	}
 	public LaMain getMain() {
-		return main
+		return main;
+	}
+	public int getnbrCoeur() {
+		return nbrCoeur;
 	}
 	public void setnbrCoeur(int val) {
 		this.nbrCoeur-=val;
@@ -35,18 +35,11 @@ public class Pirate {
 		this.popularite+=val;
 	}
 	
-	/*public void attaquer(Carte carte,Pirate adversaire) {
-		if (carte.getType()=="attaque") {
-			adversaire.nbrCoeur-=carte.getPuissance();
-		}
-		else {
-			System.out.println("cette carte est une carte de popularité");
-		}
+	public void attaquer(CarteAttaque carte,Pirate adversaire) {
+		carte.appliquerCarte(adversaire);
 	}
-	public void boosterPopularité(Carte carte) {
-		if (carte.getType()=="popularité") {
-			this.popularite+=carte.getPuissance();
-		}
+	public void boosterPopularité(CartePopularité carte) {
+		carte.appliquerCarte();
 	}
 */
 }

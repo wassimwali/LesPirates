@@ -7,11 +7,11 @@ public class CarteAttaque extends Carte {
 		super(nom,force ,description);
 	}
 	@Override
-	protected void appliquerCarte(Pirate joueur) {
+	public void appliquerCarte(Pirate joueur) {
 		joueur.setnbrCoeur(getPuissance());
 	}
 	@Override
-	protected ZoneJeu donnerZone() {
+	public ZoneJeu donnerZone() {
 		return ZoneJeu.ATTAQUE;
 	}
 }
