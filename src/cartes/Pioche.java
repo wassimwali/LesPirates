@@ -23,7 +23,7 @@ public class Pioche {
         for (int i = 0; i < 6; i++) {
             cartes[index++] = new CarteDeffense();
         }
-
+        
         // Ajouter 4 cartes Diffamation
         for (int i = 0; i < 4; i++) {
             cartes[index++] = new CarteDiffamation(3);
