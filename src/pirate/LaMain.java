@@ -1,17 +1,19 @@
 package pirate;
 
 import cartes.Carte;
+import vue.IAffichage;
 
 public class LaMain {
 	private static final int nbrMAX=5;
 	private Carte[] cartes=new Carte[nbrMAX];
+	private static final IAffichage affichage = Jeu.getAffichage();
 	
 	public LaMain(Carte[] cartes) {
 		this.cartes=cartes;
 	}
 	public void afficher() {
 		for (int i = 0; i < nbrMAX && cartes[i] != null; i++) {
-			cartes[i].afficher(i + 1);
+			affichage.afficherCarte(cartes[i].getNom(), cartes[i].getDescription());
 		}
 	}
 	public boolean ajouterCarte(Carte carte) {

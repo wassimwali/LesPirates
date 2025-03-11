@@ -4,13 +4,20 @@ import pirate.Pirate;
 import vue.ZoneJeu;
 
 public class CartePopularité extends Carte {
-	public CartePopularité(String nom, int force ,String description) {
-		super(nom,force ,description);
+	public int puissance;
+	public CartePopularité(String nom, int val ,String description) {
+		super(nom,description);
+		this.puissance=val;
+	}
+	@Override
+	public void afficher() {
+		affichage.afficherCarte(nom,description);
 	}
 	@Override
 	public void appliquerCarte(Pirate joueur) {
-		joueur.setPopularite(getPuissance());
+		joueur.setPopularite(puissance);
 	}
+	@Override
 	public ZoneJeu donnerZone() {
 		return ZoneJeu.POPULARITE;
 	}

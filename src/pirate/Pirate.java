@@ -8,6 +8,8 @@ public class Pirate {
 	private int nbrCoeur;
 	private LaMain main;
 	private int popularite=0;
+	private boolean Deuxfois;
+	private boolean eviterAttaque;
 	public Pirate(String nom) {
 		this.nom=nom;
 		this.nbrCoeur=5;
@@ -34,12 +36,22 @@ public class Pirate {
 	public void setPopularite(int val) {
 		this.popularite+=val;
 	}
-	
 	public void attaquer(CarteAttaque carte,Pirate adversaire) {
 		carte.appliquerCarte(adversaire);
 	}
 	public void boosterPopularité(CartePopularité carte) {
-		carte.appliquerCarte();
+		carte.appliquerCarte(this);
 	}
-*/
+	public void JouerDeuxFois(boolean b) {
+		this.Deuxfois = b;
+		
+	}
+	public void eviterAttaque(boolean b) {
+		this.eviterAttaque = b;
+		
+	}
+	public void reduirePopularite(int reduction) {
+		popularite-=reduction;
+		
+	}
 }

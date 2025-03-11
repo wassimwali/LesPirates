@@ -49,8 +49,8 @@ public class Affichage implements IAffichage {
 		 System.out.println("\n le pirate "+Nom+" a "+nbr+" Coeurs");
 	 }
 	 @Override
-	public void afficherCarte(String nom,String description,int puissance) {
+	public void afficherCarte(String nom,String description) {
 		 System.out.println("\n Nom de la carte : "+nom);
-		 System.out.println("\n Puissance de la carte : "+puissance);
+		 System.out.println("\n Description carte : "+description);
 	 }
 }

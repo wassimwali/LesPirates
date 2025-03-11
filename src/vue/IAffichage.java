@@ -1,5 +1,7 @@
 package vue;
 
+import cartes.Carte;
+
 public interface IAffichage {
 
 	void afficherBienvenue();
@@ -10,7 +12,7 @@ public interface IAffichage {
 
 	void afficherPopularit(String nomPirate, int popularite);
 
-	void afficherCarte(String nom,String description, int puissance);
+	void afficherCarte(String nom,String description);
 	public void presentJeu();
 
 	void afficherNbrCoeur(String Nom, int nbr);
