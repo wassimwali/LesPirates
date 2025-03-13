@@ -17,4 +17,7 @@ public interface IAffichage {
 
 	void afficherNbrCoeur(String Nom, int nbr);
 
+	void afficherMessage(String message);
+	void afficherEtat(String nom , int nbrcoeur,int popularite);
+
 }

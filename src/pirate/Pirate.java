@@ -29,12 +29,18 @@ public class Pirate {
 	}
 	public void setnbrCoeur(int val) {
 		this.nbrCoeur-=val;
+		if (this.nbrCoeur < 0) {
+	        this.nbrCoeur = 0;
+	    }
 	}
 	public int getPopularite() {
 		return popularite;
 	}
 	public void setPopularite(int val) {
 		this.popularite+=val;
+		if (this.popularite>5) {
+	        this.popularite = 5;
+	    }
 	}
 	public void attaquer(CarteAttaque carte,Pirate adversaire) {
 		carte.appliquerCarte(adversaire);

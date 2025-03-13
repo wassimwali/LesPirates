@@ -53,4 +53,14 @@ public class Affichage implements IAffichage {
 		 System.out.println("\n Nom de la carte : "+nom);
 		 System.out.println("\n Description carte : "+description);
 	 }
+	@Override
+	public void afficherMessage(String message) {
+		System.out.println(message);
+	}
+	@Override
+	public void afficherEtat(String nom, int nbrcoeur, int popularite) {
+		 System.out.println(nom + " - Vie: " + nbrcoeur + " - Popularité: " + popularite);
+
+		
+	}
 }
