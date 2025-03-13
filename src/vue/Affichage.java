@@ -63,4 +63,9 @@ public class Affichage implements IAffichage {
 
 		
 	}
+	@Override
+	public String demanderNumeroCarte() {
+		System.out.println(" Entrez le numero de carte que vous allez jouer"+" : ");
+		return scanner.nextLine();
+	}
 }

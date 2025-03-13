@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 
 public class Pioche {
     private static final int TAILLEPIOCHE = 30;
-    private static Carte[] cartes = new Carte[TAILLEPIOCHE];
+    private  Carte[] cartes = new Carte[TAILLEPIOCHE];
     private static SecureRandom random = new SecureRandom();
     private int nbCartes = TAILLEPIOCHE;
     public Pioche() {
@@ -17,7 +17,7 @@ public class Pioche {
 
         // Ajouter 8 cartes Attaque
         for (int i = 0; i < 8; i++) {
-            cartes[index++] = new CarteAttaque("Coup de Sabre", 2, "Une attaque rapide infligeant des dégâts.");
+            cartes[index++] = new CarteAttaque("Coup de Sabre", 2, "Une attaque rapide infligeant des dégâts de 2 unité de vie.");
         }
 
         // Ajouter 6 cartes Défense
@@ -32,7 +32,7 @@ public class Pioche {
 
         // Ajouter 6 cartes Popularité
         for (int i = 0; i < 6; i++) {
-            cartes[index++] = new CartePopularité("Réputation de Pirate", 2, "Gagne en notoriété.");
+            cartes[index++] = new CartePopularité("Réputation de Pirate", 2, "Gagne en notoriété 2 unité de popularité.");
         }
 
         // Ajouter 4 cartes Soin

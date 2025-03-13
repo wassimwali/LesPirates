@@ -55,7 +55,7 @@ public class Jeu {
 
             boolean rejouer = tourJoueur(joueurActuel, adversaire);
             
-            // Si le joueur n a pas une Carte Double Tour, on change de tour
+            // Si le joueur n a pas une Carte Double Tour, on change de joueur
             if (!rejouer) {
                 Pirate temp = joueurActuel;
                 joueurActuel = adversaire;
@@ -72,14 +72,16 @@ public class Jeu {
 
         // Piocher une carte
         if (!pioche.estVide()) {
+        	
             Carte cartePiochee = pioche.retirerCarte();
             joueur.getMain().ajouterCarte(cartePiochee);
             affichage.afficherMessage(joueur.getNom() + " a pioché une carte son nom est: "+cartePiochee.getNom()+" et sa description : "+cartePiochee.getDescription());
         }
-
+        String str=affichage.demanderNumeroCarte();
+        int NumCarte=Integer.parseInt(str);
         // Jouer une carte
-        Carte carteJouee = joueur.getMain().retirerDeMain(1); // Simuler le choix de la première carte
-        affichage.afficherMessage(joueur.getNom() + " a pioché une carte son nom est: "+carteJouee.getNom()+" et sa description : "+carteJouee.getDescription());
+        Carte carteJouee = joueur.getMain().retirerDeMain(NumCarte); // Simuler le choix de la première carte
+        affichage.afficherMessage(joueur.getNom() + " a choisi une carte son nom est: "+carteJouee.getNom()+" et sa description : "+carteJouee.getDescription());
         if (carteJouee != null) {
             if (carteJouee instanceof CartePopularité) {
                 carteJouee.appliquerCarte(joueur);

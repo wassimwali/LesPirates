@@ -19,5 +19,5 @@ public interface IAffichage {
 
 	void afficherMessage(String message);
 	void afficherEtat(String nom , int nbrcoeur,int popularite);
-
+	String demanderNumeroCarte();
 }

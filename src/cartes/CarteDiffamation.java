@@ -13,7 +13,7 @@ public class CarteDiffamation extends Carte{
 
 	@Override
 	public void afficher() {
-		// TODO Auto-generated method stub
+		affichage.afficherCarte(nom,description);
 		
 	}
 
