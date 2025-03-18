@@ -77,8 +77,10 @@ public class Jeu {
             joueur.getMain().ajouterCarte(cartePiochee);
             affichage.afficherMessage(joueur.getNom() + " a pioché une carte son nom est: "+cartePiochee.getNom()+" et sa description : "+cartePiochee.getDescription());
         }
+        affichage.afficherMain(joueur.getNom(), joueur.getMain().getMainCarte());
         String str=affichage.demanderNumeroCarte();
         int NumCarte=Integer.parseInt(str);
+        
         // Jouer une carte
         Carte carteJouee = joueur.getMain().retirerDeMain(NumCarte); // Simuler le choix de la première carte
         affichage.afficherMessage(joueur.getNom() + " a choisi une carte son nom est: "+carteJouee.getNom()+" et sa description : "+carteJouee.getDescription());
@@ -89,10 +91,15 @@ public class Jeu {
                 ZoneJeu zone= carteJouee.donnerZone();
                 affichage.afficherMessage("Et donc il a deposer la carte dans la zone "+zone.toString());
             } else if (carteJouee instanceof CarteAttaque) {
+            	ZoneJeu zone= carteJouee.donnerZone();
+            	affichage.afficherMessage("Et donc il a deposer la carte dans la zone "+zone.toString());
+            	if (adversaire.geteviterAttaque()) {
+            		affichage.afficherMessage(adversaire.getNom()+" a dodgé l'attaque grace a sa carte de Parade");
+            	}
+            	else{
             	carteJouee.appliquerCarte(adversaire);
                 carteJouee.afficher();
-                ZoneJeu zone= carteJouee.donnerZone();
-                affichage.afficherMessage("Et donc il a deposer la carte dans la zone "+zone.toString());
+            	}
             } else if (carteJouee instanceof CarteDoubleTour) {
             	carteJouee.appliquerCarte(joueur);
                 carteJouee.afficher();

@@ -1,6 +1,8 @@
 package vue;
 import java.util.Scanner;
 
+import cartes.Carte;
+
 public class Affichage implements IAffichage {
 	private Scanner scanner=new Scanner(System.in);
 	 @Override
@@ -68,4 +70,13 @@ public class Affichage implements IAffichage {
 		System.out.println(" Entrez le numero de carte que vous allez jouer"+" : ");
 		return scanner.nextLine();
 	}
+	@Override
+	public void afficherMain(String nom, Carte[] cartes) {
+		System.out.println("📜 Main de " + nom + " :");
+		 for (int i = 0; i < cartes.length; i++) {
+		 if (cartes[i] != null) {
+		 System.out.println((i + 1) + ". " + cartes[i].getNom() + " - " + cartes[i].getDescription());
+		 }
+	}
+   }
 }

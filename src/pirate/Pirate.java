@@ -41,6 +41,9 @@ public class Pirate {
 		if (this.popularite>5) {
 	        this.popularite = 5;
 	    }
+		if (this.popularite<0) {
+			this.popularite=0;
+		}
 	}
 	public void attaquer(CarteAttaque carte,Pirate adversaire) {
 		carte.appliquerCarte(adversaire);
@@ -56,8 +59,14 @@ public class Pirate {
 		this.eviterAttaque = b;
 		
 	}
+	public boolean geteviterAttaque() {
+		return eviterAttaque;
+	}
 	public void reduirePopularite(int reduction) {
 		popularite-=reduction;
+		if (this.popularite<0) {
+			this.popularite=0;
+		}
 		
 	}
 }
