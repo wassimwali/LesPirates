@@ -9,10 +9,12 @@ public abstract class Carte {
 	protected String nom;
 	protected String description;
 	protected static final IAffichage affichage = Jeu.getAffichage();
-	public Carte(String nom,String description) {
-		this.nom=nom;
-		this.description=description;
+
+	public Carte(String nom, String description) {
+		this.nom = nom;
+		this.description = description;
 	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -20,8 +22,10 @@ public abstract class Carte {
 	public String getDescription() {
 		return description;
 	}
+
 	public abstract void afficher();
+
 	public abstract void appliquerCarte(Pirate joueur);
+
 	public abstract ZoneJeu donnerZone();
 }
-
